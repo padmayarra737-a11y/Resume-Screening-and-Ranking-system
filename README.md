@@ -1,106 +1,225 @@
 # 📄 Resume Screening & Ranking System
 
-An NLP project that ranks resumes against a job description. A recruiter pastes a job
-description, uploads resumes (PDF / DOCX / TXT), and gets a ranked list with a match score,
-matched skills, **missing skills**, and a score breakdown for every candidate.
+An NLP-based project that compares resumes with a job description and ranks candidates based on their relevance.
 
-## How it works
+The system supports **PDF, DOCX, and TXT** resumes and provides match scores, matched skills, missing skills, and score breakdowns.
 
+## 🚀 Features
+
+* 📄 Upload PDF, DOCX, and TXT resumes
+* 📝 Enter a job description
+* 🔍 Resume text extraction
+* 🤖 NLP-based resume matching
+* 📊 TF-IDF + Cosine Similarity
+* 🛠️ Skill matching
+* ❌ Missing skill detection
+* 💼 Experience matching
+* 🏆 Candidate ranking
+* 📈 Score breakdown
+* 📥 Export results as CSV
+* 🌐 Streamlit web application
+
+## 🧠 How It Works
+
+```text
+Job Description
+       │
+       ▼
+Resume Upload
+       │
+       ▼
+Resume Parser
+       │
+       ▼
+Information Extraction
+       │
+       ├── Skills
+       ├── Experience
+       └── Education
+       │
+       ▼
+Candidate Scoring
+       │
+       ├── Text Similarity  → 60%
+       ├── Skill Match      → 30%
+       └── Experience      → 10%
+       │
+       ▼
+Candidate Ranking
+       │
+       ▼
+Streamlit Dashboard
 ```
-Resume files ──► parser.py ──► extractor.py ──► ranker.py ──► Streamlit app
-(PDF/DOCX/TXT)   raw text      skills, years,    score + rank    table, charts,
-                               education,                         explanations,
-                               email, phone                       CSV export
+
+## 🧮 Scoring
+
+The final score is calculated as:
+
+```text
+Final Score =
+0.60 × Text Similarity
++ 0.30 × Skill Match
++ 0.10 × Experience Match
 ```
 
-**Final score = 60% text similarity + 30% skill match + 10% experience match**
-(weights can be changed in the app sidebar)
+### Text Similarity
 
-| Part | What it does |
-|---|---|
-| Text similarity | TF-IDF (1-2 word phrases) + cosine similarity. Optional sentence-transformer embeddings. |
-| Skill match | % of the job's required skills found in the resume (275-skill dictionary in `data/skills.csv`) |
-| Experience match | Years found in resume vs. years required by the job (capped at 100%) |
+TF-IDF with 1-2 word n-grams and cosine similarity is used to compare the resume with the job description.
 
-## Project structure
+### Skill Match
 
+Required skills from the job description are compared with skills found in the resume.
+
+Example:
+
+```text
+Matched Skills:
+✓ Python
+✓ SQL
+✓ Machine Learning
+
+Missing Skills:
+✗ Docker
+✗ AWS
 ```
-resume-ranker/
-├── app.py                  # Streamlit web app
+
+### Experience Match
+
+The candidate's mentioned years of experience are compared with the experience required by the job.
+
+## 📁 Project Structure
+
+```text
+resume-screening-ranking-system/
+│
+├── app.py
 ├── requirements.txt
+├── README.md
+├── .gitignore
+│
 ├── data/
-│   ├── raw/                # put Resume.csv and data.csv here
-│   └── skills.csv          # skills dictionary (edit to add your own)
-├── sample_resumes/         # 6 test resumes (PDF, DOCX, TXT)
-├── sample_jds/             # sample job description
-├── results/                # evaluation output (created by evaluate.py)
+│   ├── raw/
+│   └── skills.csv
+│
+├── sample_resumes/
+├── sample_jds/
+├── results/
+│
 └── src/
-    ├── load_data.py        # Step 1: clean the Kaggle datasets
-    ├── parser.py           # Step 2: read PDF / DOCX / TXT
-    ├── extractor.py        # Step 3: skills, experience, education, contacts
-    ├── ranker.py           # Step 4: scoring and ranking
-    ├── evaluate.py         # Step 5: precision@10 evaluation
-    └── demo.py             # quick end-to-end check
+    ├── load_data.py
+    ├── parser.py
+    ├── extractor.py
+    ├── ranker.py
+    ├── evaluate.py
+    └── demo.py
 ```
 
-## Setup
+## 🛠️ Technologies
+
+* Python
+* Pandas
+* NumPy
+* Scikit-learn
+* NLTK
+* PyPDF2
+* python-docx
+* Streamlit
+* Matplotlib
+
+## ⚙️ Installation
+
+Clone the repository:
 
 ```bash
-python -m venv venv
-venv\Scripts\activate          # Windows      |   source venv/bin/activate   (Mac/Linux)
+git clone https://github.com/padmayarra737-a11y/resume-screening-ranking-system.git
+cd resume-screening-ranking-system
+```
+
+Create a virtual environment:
+
+### Linux / macOS
+
+```bash
+python3 -m venv venv
+source venv/bin/activate
+```
+Install dependencies:
+
+```bash
 pip install -r requirements.txt
 ```
 
-Put `Resume.csv` (Kaggle Resume Dataset) and `data.csv` (job descriptions) in `data/raw/`.
+## 📊 Dataset
 
-## Run it (in this order)
+The project uses:
 
-```bash
-python -m src.load_data     # Step 1: clean data
-python -m src.extractor     # Step 3: test extraction on a sample text
-python -m src.demo          # Steps 2-4: rank 6 sample resumes (PDF/DOCX/TXT)
-python -m src.evaluate      # Step 5: accuracy test (takes about 1-2 minutes)
-streamlit run app.py        # Step 6: launch the web app
+* `Resume.csv` — Resume dataset
+* `data.csv` — Job description dataset
+* `skills.csv` — Skills dictionary
+
+Place the raw datasets inside:
+
+```text
+data/raw/
 ```
 
-## Results
+## ▶️ Run the Project
 
-Test A: one hand-written job description per category, ranking all 2,481 Kaggle resumes,
-**precision@10** (how many of the top 10 belong to the right category):
+Clean the datasets:
 
-| Method | Average precision@10 (15 categories) |
-|---|---|
-| TF-IDF only | **0.71** |
-| Combined (60/30/10) | 0.69 |
+```bash
+python -m src.load_data
+```
 
-Best: HR, Chef, Fitness (1.00). Weakest: Information-Technology and Sales (0.10).
+Test extraction:
 
-Test B: 30 "Data Analyst" job descriptions from `data.csv` (the resume dataset has no Data Analyst
-category, so this is a sanity check, not an accuracy score). 38% of the top-10 resumes came from
-analyst-type categories (IT, Finance, Business-Development, Consultant, Accountant, Banking),
-and none of the top-10 lists were dominated by unrelated fields such as Chef or Fitness.
+```bash
+python -m src.extractor
+```
 
-## Limitations (be honest about these in interviews)
+Run the demo:
 
-- **Category overlap in the dataset.** Sales vs. Business-Development and IT vs.
-  Engineering/Consultant resumes look very similar, which caps precision for those labels.
-  The IT resumes are mostly IT support/management, not software developers.
-- **Skill match did not beat TF-IDF alone** on this benchmark, but it adds explainability
-  (matched / missing skills), which is what recruiters need.
-- The skills list is hand-made and tech/business-heavy. Skills not in the list are invisible
-  to the skill score.
-- Experience is total years mentioned, not years in the relevant field.
-- Scanned (image-only) PDFs contain no text and are skipped (OCR is a future improvement).
-- The Kaggle resumes are labeled by category only; there is no "correct ranking" ground truth.
+```bash
+python -m src.demo
+```
 
-## Ideas to extend
+Run evaluation:
 
-- Sentence embeddings (`pip install sentence-transformers`) - selectable in the app once installed
-- OCR for scanned PDFs (pytesseract)
-- Learn skills automatically from job descriptions instead of a fixed list
-- Deploy on Streamlit Community Cloud or Hugging Face Spaces
+```bash
+python -m src.evaluate
+```
 
-## Fairness
+Start the Streamlit application:
 
-Names, gender, age and photos are never used in scoring - only text content is compared
-with the job description.
+```bash
+streamlit run app.py
+```
+
+## 📈 Evaluation
+
+The system was tested using the resume dataset.
+
+| Method           | Average Precision@10 |
+| ---------------- | -------------------: |
+| TF-IDF Only      |             **0.71** |
+| Combined Scoring |                 0.69 |
+
+The evaluation shows that TF-IDF performed well on the available category-based dataset, while the combined scoring approach provides additional **skill and experience explanations**.
+
+## ⚠️ Limitations
+
+* Skill matching depends on the skills dictionary.
+* Experience extraction is based on years mentioned in the resume.
+* Scanned/image-only PDFs are not currently supported.
+* The dataset does not contain a true recruiter ranking, so Precision@10 is only an experimental evaluation.
+* Resume categories can overlap, making some categories difficult to distinguish.
+
+## 🔮 Future Improvements
+
+* Sentence Transformer semantic matching
+* OCR for scanned resumes
+* Automatic skill extraction
+* Better experience extraction
+* Deployment using Streamlit Cloud or Hugging Face Spaces
+* 
+GitHub: `https://github.com/padmayarra737-a11y`
