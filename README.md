@@ -19,37 +19,47 @@ The system supports **PDF, DOCX, and TXT** resumes and provides match scores, ma
 * 📥 Export results as CSV
 * 🌐 Streamlit web application
 
-## 🧠 How It Works
-
-```text
-Job Description
-       │
-       ▼
-Resume Upload
-       │
-       ▼
-Resume Parser
-       │
-       ▼
-Information Extraction
-       │
-       ├── Skills
-       ├── Experience
-       └── Education
-       │
-       ▼
-Candidate Scoring
-       │
-       ├── Text Similarity  → 60%
-       ├── Skill Match      → 30%
-       └── Experience      → 10%
-       │
-       ▼
-Candidate Ranking
-       │
-       ▼
-Streamlit Dashboard
-```
+🔄 Workflow
+Resume Files
+     │
+     ▼
+┌─────────────────┐
+│  Resume Parser  │
+│ PDF/DOCX/TXT    │
+└────────┬────────┘
+         │
+         ▼
+┌──────────────────────┐
+│ Information          │
+│ Extraction           │
+│                      │
+│ • Skills             │
+│ • Experience         │
+│ • Education          │
+│ • Email              │
+│ • Phone              │
+└──────────┬───────────┘
+           │
+           ▼
+┌──────────────────────┐
+│ Candidate Ranking    │
+│                      │
+│ • Text Similarity    │
+│ • Skill Match        │
+│ • Experience Match   │
+└──────────┬───────────┘
+           │
+           ▼
+┌──────────────────────┐
+│   Streamlit App      │
+│                      │
+│ • Ranking            │
+│ • Match Score        │
+│ • Matched Skills     │
+│ • Missing Skills     │
+│ • Score Breakdown    │
+│ • CSV Export         │
+└──────────────────────┘
 
 ## 🧮 Scoring
 
