@@ -112,7 +112,7 @@ cd resume-screening-ranking-system
 
 Create a virtual environment:
 
-### Linux / macOS
+### Linux
 
 ```bash
 python3 -m venv venv
@@ -181,20 +181,4 @@ The system was tested using the resume dataset.
 
 The evaluation shows that TF-IDF performed well on the available category-based dataset, while the combined scoring approach provides additional **skill and experience explanations**.
 
-## ⚠️ Limitations
-
-* Skill matching depends on the skills dictionary.
-* Experience extraction is based on years mentioned in the resume.
-* Scanned/image-only PDFs are not currently supported.
-* The dataset does not contain a true recruiter ranking, so Precision@10 is only an experimental evaluation.
-* Resume categories can overlap, making some categories difficult to distinguish.
-
-## 🔮 Future Improvements
-
-* Sentence Transformer semantic matching
-* OCR for scanned resumes
-* Automatic skill extraction
-* Better experience extraction
-* Deployment using Streamlit Cloud or Hugging Face Spaces
-* 
 GitHub: `https://github.com/padmayarra737-a11y`
