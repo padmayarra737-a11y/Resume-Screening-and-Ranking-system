@@ -1,0 +1,14 @@
+Data Analyst
+
+We are looking for a Data Analyst with 3+ years of experience to turn data into insights for our business teams.
+
+Responsibilities:
+- Analyze large datasets using SQL and Python (pandas) to find trends and opportunities.
+- Build dashboards and reports in Power BI or Tableau; track KPIs and present findings to stakeholders.
+- Design and maintain ETL processes and data models.
+- Run statistical analysis, forecasting and A/B testing.
+
+Requirements:
+- Bachelor's degree in Statistics, Computer Science, Engineering or related field.
+- Strong Excel, SQL and data visualization skills.
+- Excellent communication and presentation skills.

@@ -1,0 +1,276 @@
+skill,aliases,category
+python,,programming
+java,,programming
+javascript,js,programming
+typescript,,programming
+c++,cpp,programming
+c#,csharp,programming
+.net,dotnet|asp.net,programming
+php,,programming
+ruby,,programming
+golang,,programming
+swift,,programming
+kotlin,,programming
+scala,,programming
+matlab,,programming
+r programming,rstudio,programming
+sql,,database
+mysql,,database
+postgresql,postgres,database
+oracle,,database
+mongodb,,database
+sql server,mssql,database
+nosql,,database
+redis,,database
+sqlite,,database
+html,html5,web
+css,css3,web
+react,reactjs|react.js,web
+angular,angularjs,web
+vue,vue.js|vuejs,web
+node.js,nodejs|node,web
+django,,web
+flask,,web
+spring boot,springboot,web
+rest api,restful|rest apis,web
+jquery,,web
+bootstrap,,web
+wordpress,,web
+machine learning,ml,data
+deep learning,,data
+nlp,natural language processing,data
+computer vision,,data
+tensorflow,,data
+pytorch,,data
+keras,,data
+scikit-learn,sklearn,data
+pandas,,data
+numpy,,data
+scipy,,data
+statistics,statistical analysis,data
+data analysis,data analytics,data
+data visualization,data visualisation,data
+data mining,,data
+data modeling,data modelling,data
+data warehouse,data warehousing,data
+etl,,data
+big data,,data
+hadoop,,data
+spark,pyspark|apache spark,data
+kafka,,data
+airflow,,data
+tableau,,data
+power bi,powerbi,data
+looker,,data
+qlik,qlikview,data
+excel,ms excel|microsoft excel,data
+google sheets,,data
+sas,,data
+spss,,data
+a/b testing,ab testing,data
+regression,,data
+forecasting,,data
+aws,amazon web services,cloud
+azure,,cloud
+gcp,google cloud,cloud
+docker,,devops
+kubernetes,k8s,devops
+jenkins,,devops
+terraform,,devops
+ci/cd,cicd,devops
+git,,devops
+github,,devops
+linux,,devops
+unix,,devops
+bash,shell scripting,devops
+ansible,,devops
+networking,,it
+tcp/ip,,it
+cybersecurity,information security|cyber security,it
+firewall,,it
+active directory,,it
+vmware,,it
+help desk,helpdesk,it
+technical support,,it
+troubleshooting,,it
+windows server,,it
+cisco,,it
+sap,,it
+salesforce,,it
+jira,,tools
+confluence,,tools
+agile,,management
+scrum,,management
+kanban,,management
+waterfall,,management
+project management,,management
+program management,,management
+product management,,management
+stakeholder management,,management
+risk management,,management
+change management,,management
+strategic planning,,management
+process improvement,,management
+six sigma,lean,management
+budgeting,budget management,management
+leadership,,soft
+team leadership,,soft
+communication,,soft
+problem solving,,soft
+critical thinking,,soft
+time management,,soft
+negotiation,,soft
+presentation,presentations,soft
+collaboration,,soft
+public speaking,,soft
+mentoring,coaching,soft
+customer service,,business
+customer support,,business
+account management,,business
+business development,,business
+lead generation,,business
+sales,,business
+b2b,,business
+crm,,business
+market research,,business
+business analysis,,business
+requirements gathering,,business
+kpi,kpis,business
+reporting,,business
+operations management,,business
+supply chain,,business
+procurement,,business
+inventory management,,business
+vendor management,,business
+contract negotiation,,business
+digital marketing,,marketing
+seo,search engine optimization,marketing
+sem,,marketing
+social media,social media marketing,marketing
+content marketing,,marketing
+content creation,,marketing
+email marketing,,marketing
+google analytics,,marketing
+google ads,adwords,marketing
+copywriting,,marketing
+branding,,marketing
+public relations,,marketing
+media relations,,marketing
+event planning,,marketing
+advertising,,marketing
+market analysis,,marketing
+accounting,,finance
+accounts payable,,finance
+accounts receivable,,finance
+bookkeeping,,finance
+general ledger,,finance
+financial reporting,financial statements,finance
+financial analysis,,finance
+financial modeling,financial modelling,finance
+payroll,,finance
+auditing,audit,finance
+tax,taxation,finance
+reconciliation,,finance
+quickbooks,,finance
+gaap,,finance
+ifrs,,finance
+month-end close,month end close,finance
+cost accounting,,finance
+underwriting,,finance
+investment,,finance
+portfolio management,,finance
+compliance,,finance
+anti-money laundering,aml,finance
+credit analysis,,finance
+loan,loans,finance
+mortgage,,finance
+banking,,finance
+recruiting,recruitment,hr
+talent acquisition,,hr
+onboarding,,hr
+employee relations,,hr
+benefits administration,,hr
+performance management,,hr
+hris,,hr
+workday,,hr
+training and development,,hr
+compensation,,hr
+succession planning,,hr
+labor law,employment law,hr
+lesson planning,,education
+curriculum development,,education
+classroom management,,education
+tutoring,,education
+special education,,education
+student assessment,,education
+instructional design,,education
+e-learning,elearning,education
+patient care,,healthcare
+electronic health records,ehr|emr,healthcare
+hipaa,,healthcare
+medical terminology,,healthcare
+clinical,,healthcare
+cpr,,healthcare
+nursing,,healthcare
+phlebotomy,,healthcare
+medical billing,,healthcare
+pharmacy,,healthcare
+infection control,,healthcare
+food safety,,culinary
+menu planning,,culinary
+food preparation,,culinary
+catering,,culinary
+kitchen management,,culinary
+haccp,,culinary
+inventory control,,culinary
+personal training,,fitness
+nutrition,,fitness
+group fitness,,fitness
+strength training,,fitness
+autocad,,engineering
+solidworks,,engineering
+cad,,engineering
+plc,,engineering
+quality assurance,qa,engineering
+quality control,,engineering
+manufacturing,,engineering
+maintenance,,engineering
+mechanical engineering,,engineering
+electrical engineering,,engineering
+civil engineering,,engineering
+project scheduling,,engineering
+primavera,,engineering
+blueprint,blueprints,engineering
+osha,,engineering
+safety,,engineering
+construction management,,engineering
+adobe photoshop,photoshop,design
+adobe illustrator,illustrator,design
+adobe indesign,indesign,design
+figma,,design
+sketch,,design
+ui/ux,ux|ui design|ux design,design
+graphic design,,design
+wireframing,wireframes,design
+prototyping,,design
+video editing,,design
+adobe premiere,premiere pro,design
+after effects,,design
+flight operations,,aviation
+air traffic control,,aviation
+faa,,aviation
+aircraft maintenance,,aviation
+airline,,aviation
+crew resource management,,aviation
+legal research,,legal
+litigation,,legal
+contract drafting,contracts,legal
+legal writing,,legal
+paralegal,,legal
+mediation,,legal
+microsoft office,ms office,tools
+microsoft word,ms word,tools
+powerpoint,microsoft powerpoint,tools
+outlook,,tools
+sharepoint,,tools
+slack,,tools

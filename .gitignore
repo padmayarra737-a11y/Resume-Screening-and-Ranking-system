@@ -1,0 +1,9 @@
+__pycache__/
+*.pyc
+.venv/
+venv/
+.DS_Store
+# raw Kaggle files are large - do not upload to GitHub
+data/raw/
+data/resumes_clean.csv
+data/jobs_clean.csv
